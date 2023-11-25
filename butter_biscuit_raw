@@ -1,0 +1,17 @@
+%butterworth
+
+
+wp=input('Enter the passband frequency:');
+ws=input('Enter the stopband frequency:');
+rp=input('Enter the passband attenuation:');
+rs=input('Enter the stopband attenuation:');
+nq=input('Enter the nyquist rate:');
+type=input('low/high/stop/bandpass:');
+wp=wp/nq;
+ws=ws/nq;
+
+
+[n wn] = buttord(wp,ws,rp,rs);
+disp(n)
+[b a]= butter(n,wn,type,'s');
+freqs(b,a);
