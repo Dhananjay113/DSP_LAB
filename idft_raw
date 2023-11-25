@@ -1,0 +1,41 @@
+%idft
+
+Xk=input('Enter X[k]: ');
+N=length(Xk);
+xn=zeros(1,N);
+for n=1:N
+for k=1:N
+xn(n)=xn(n)+Xk(k)*exp((1j*2*pi*(n-1)*(k-1))/N);
+end
+xn(n)=xn(n)/N;
+
+end
+disp("IDFT value :");
+disp(xn);
+t=0:N-1;
+subplot(2,2,1);
+stem(t,Xk);
+title('X(k)');
+xlabel('Time');
+ylabel('Amplitude');
+subplot(2,2,2);
+stem(t,xn);
+title('x(n)');
+xlabel('Time');
+ylabel('Amplitude');
+mag=abs(xn);
+disp("Magnitude value :");
+disp(mag);
+subplot(2,2,3);
+stem(t,mag);
+title('Magnitude response');
+xlabel('Time');
+ylabel('Magnitude');
+phase=angle(xn);
+disp("Phase value :");
+disp(phase);
+subplot(2,2,4);
+stem(t,phase);
+title('Phase response');
+xlabel('Time');
+ylabel('Phase');
