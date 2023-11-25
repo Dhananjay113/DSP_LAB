@@ -1,0 +1,15 @@
+%chubbyshave
+
+
+wp=input('Enter the passband frequency:');
+ws=input('Enter the stopband frequency:');
+rp=input('Enter the passband attenuation:');
+rs=input('Enter the stopband attenuation:');
+nq=input('Enter the nyquist rate:');
+type=input('low/high/stop/bandpass:');
+wp=wp/nq;
+ws=ws/nq;
+
+[n wp] = cheb1ord(wp,ws,rp,rs);
+disp(n)
+[b a]= cheby1(n,rp,wp,type,'s');
