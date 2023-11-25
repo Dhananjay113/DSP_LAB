@@ -1,0 +1,42 @@
+%dft
+
+xn=input('Enter x : ');
+N=input('Number of DFT points : ');
+m=length(xn);
+xn=[xn zeros(1,N-m)];
+xk=zeros(1,N);
+for k=1:N
+for n=1:N
+xk(k)=xk(k)+xn(n)*exp((-1j*2*pi*(k-1)*(n-1))/N);
+end
+end
+disp("DFT: ");
+disp(xk);
+t=0:N-1;
+subplot(2,2,1);
+stem(t,xn);
+title('x(n)');
+xlabel('Time');
+ylabel('Amplitude');
+subplot(2,2,2);
+stem(t,xk);
+title('X(k)');
+xlabel('Time');
+ylabel('Amplitude');
+mag=abs(xk);
+disp("Magnitude value : ");
+disp(mag);
+subplot(2,2,3);
+stem(t,mag);
+title('Magnitude response');
+xlabel('Time');
+ylabel('Magnitude');
+phase=angle(xk);
+disp("Phase value : ");
+disp(phase);
+subplot(2,2,4);
+stem(t,phase);
+title('Phase response');
+xlabel('Time');
+ylabel('Phase');
+
