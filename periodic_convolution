@@ -1,0 +1,23 @@
+%periodic convolution
+
+x=input('Enter x[n]:');
+h=input('Enter h[n]:');
+rev_h = [h(1) h(1,numel(x):-1:2)];
+y=zeros(1,numel(x));
+z=zeros(1,numel(x));
+for i=1:numel(x)
+z=x.*rev_h;
+y(i)=sum(z);
+temp = rev_h(1,numel(z));
+rev_h = [temp rev_h(1,1:numel(y)-1)];
+end
+disp(y);
+subplot(2,2,1)
+stem(x);
+title('Input x[n]');
+subplot(2,2,2)
+stem(h);
+title('Input h[n]');
+subplot(2,2,3);
+stem(y);
+title('Circular convolution output y[n]')
