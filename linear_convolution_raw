@@ -1,0 +1,72 @@
+%linear convolution
+
+x=input('Enter x[n]:')
+h=input('Enter h[n]:')
+m=length(x);
+n=length(h);
+X=[x,zeros(1,n)];
+H=[h,zeros(1,m)];
+For i=1:n+m-1
+Y(i)=0;
+for j=1:m
+if(i-j+1>0)
+Y(i)=Y(i)+X(j)*H(i-j+1);
+end
+end
+end
+Y
+subplot(2,2,1)
+stem(x);
+title('Input x[n]');
+subplot(2,2,2);
+stem(h);
+title('Input h[n]')
+subplot(2,2,3);
+stem(Y);
+title('Linear convolution output y[n]')x=input('Enter x[n]:')
+h=input('Enter h[n]:')
+m=length(x);
+n=length(h);
+X=[x,zeros(1,n)];
+H=[h,zeros(1,m)];
+For i=1:n+m-1
+Y(i)=0;
+for j=1:m
+if(i-j+1>0)
+Y(i)=Y(i)+X(j)*H(i-j+1);
+end
+end
+end
+Y
+subplot(2,2,1)
+stem(x);
+title('Input x[n]');
+subplot(2,2,2);
+stem(h);
+title('Input h[n]')
+subplot(2,2,3);
+stem(Y);
+title('Linear convolution output y[n]')x=input('Enter x[n]:')
+h=input('Enter h[n]:')
+m=length(x);
+n=length(h);
+X=[x,zeros(1,n)];
+H=[h,zeros(1,m)];
+For i=1:n+m-1
+Y(i)=0;
+for j=1:m
+if(i-j+1>0)
+Y(i)=Y(i)+X(j)*H(i-j+1);
+end
+end
+end
+Y
+subplot(2,2,1)
+stem(x);
+title('Input x[n]');
+subplot(2,2,2);
+stem(h);
+title('Input h[n]')
+subplot(2,2,3);
+stem(Y);
+title('Linear convolution output y[n]')
