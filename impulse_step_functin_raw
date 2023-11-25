@@ -13,3 +13,32 @@ plot(t,[impulse unitstep ramp quad])
 sqwave = 0.81*square(4*pi*t);
 plot(t,sqwave)
 
+%RAMP SIGNAL:
+T=0:0.1:1
+y=T
+subplot(2,2,4)
+stem(T,y)
+xlabel('time')
+ylabel('Amplitude')
+title('discrete ramp wave')
+
+%UNIT STEP SIGNAL:
+x=-5:5;
+y=x>=0
+subplot(2,2,3)
+stem(x,y)
+xlabel('time')
+ylabel('Amplitude')
+title('discrete step wave')
+
+
+%IMPULSE SIGNAL:
+X=-10:10
+Y=X==0
+subplot(2,2,4)
+stem(X,Y)
+xlabel('time')
+ylabel('Amplitude')
+title('discrete impulse wave')
+
+
